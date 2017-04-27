@@ -17,6 +17,13 @@ Defocus map estimation and binary blurry region segmentation results. (a) Input 
 
 ### Citation
 
+    @inproceedings{park2017unified,
+        title={A Unified Approach of Multi-scale Deep and Hand-crafted Features for Defocus Estimation},
+        author={Park, Jinsun and Tai, Yu-Wing and Cho, Donghyeon and Kweon, In So},
+        booktitle={To appear in CVPR 2017},
+        year={2017}
+    }
+    
 ### Dependencies
 Our current implementation is tested on:
 - Ubuntu 14.04.5 LTS
