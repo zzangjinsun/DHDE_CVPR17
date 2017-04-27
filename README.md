@@ -27,7 +27,7 @@ Defocus map estimation and binary blurry region segmentation results. (a) Input 
 ### Dependencies
 Our current implementation is tested on:
 - Ubuntu 14.04.5 LTS
-- [Caffe](http://caffe.berkeleyvision.org/)
+- [Caffe](http://caffe.berkeleyvision.org/) (Matcaffe)
 - MATLAB R2016a / R2017a
 
 ### Usage
