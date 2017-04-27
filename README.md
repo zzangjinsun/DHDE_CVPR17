@@ -13,7 +13,7 @@ In this paper, we introduce robust and synergetic hand-crafted features and a si
 
 ![Results](./images/results.png)
 
-Defocus map estimation and binary blurry region segmentation results. (a) Input images. (b) Results of Shi et al.[^1] (c) Results of Shi et al.[^2] (d) Results of Shi et al.[^3] (Inverted for visualization) (e) Results of Zhuo and Sim.[^4] (f) Our defocus maps and (g) corresponding binary masks. (h) Ground truth binary masks.
+Defocus map estimation and binary blurry region segmentation results. (a) Input images. (b) Results of Shi et al.[1] (c) Results of Shi et al.[2] (d) Results of Shi et al.[3] (Inverted for visualization) (e) Results of Zhuo and Sim.[4] (f) Our defocus maps and (g) corresponding binary masks. (h) Ground truth binary masks.
 
 ### Citation
 
@@ -25,11 +25,14 @@ Our current implementation is tested on:
 
 ### Usage
 
+### References
 
+[1] Shi, Jianping, et al. "Break ames room illusion: depth from general single images." ACM Transactions on Graphics (TOG) 34.6 (2015): 225.
 
-[^1]: Shi, Jianping, et al. "Break ames room illusion: depth from general single images." ACM Transactions on Graphics (TOG) 34.6 (2015): 225.
-[^2]: Shi, Jianping, Li Xu, and Jiaya Jia. "Discriminative blur detection features." Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2014.
-[^3]: Shi, Jianping, Li Xu, and Jiaya Jia. "Just noticeable defocus blur detection and estimation." Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2015.
-[^4]: Zhuo, Shaojie, and Terence Sim. "Defocus map estimation from a single image." Pattern Recognition 44.9 (2011): 1852-1858.
+[2] Shi, Jianping, Li Xu, and Jiaya Jia. "Discriminative blur detection features." Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2014.
+
+[3] Shi, Jianping, Li Xu, and Jiaya Jia. "Just noticeable defocus blur detection and estimation." Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2015.
+
+[4] Zhuo, Shaojie, and Terence Sim. "Defocus map estimation from a single image." Pattern Recognition 44.9 (2011): 1852-1858.
 
 
