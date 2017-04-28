@@ -9,6 +9,8 @@
 % Please feel free to contact if you have any problems.
 % 
 % E-mail : Jinsun Park (zzangjinsun@gmail.com)
+%          Robotics and Computer Vision Lab., EE,
+%          KAIST, Republic of Korea
 % Project Page : https://github.com/zzangjinsun/DHDE_CVPR17/
 %
 %
