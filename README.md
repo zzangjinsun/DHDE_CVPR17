@@ -13,7 +13,7 @@ In this paper, we introduce robust and synergetic hand-crafted features and a si
 
 ![Results](./images/results.png)
 
-Defocus map estimation and binary blurry region segmentation results. (a) Input images. (b) Results of Shi et al.[1] (c) Results of Shi et al.[2] (d) Results of Shi et al.[3] (Inverted for visualization) (e) Results of Zhuo and Sim.[4] (f) Our defocus maps and (g) corresponding binary masks. (h) Ground truth binary masks.
+Defocus map estimation and binary blurry region segmentation results. (a) Input images. (b) Results of Shi et al. [1] (c) Results of Shi et al. [2] (d) Results of Shi et al. [3] (Inverted for visualization) (e) Results of Zhuo and Sim. [4] (f) Our defocus maps and (g) corresponding binary masks. (h) Ground truth binary masks.
 
 ### Citation
 
