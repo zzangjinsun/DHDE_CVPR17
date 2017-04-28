@@ -26,13 +26,36 @@ Defocus map estimation and binary blurry region segmentation results. (a) Input 
     
 ### Dependencies
 Our current implementation is tested on:
-- Ubuntu 14.04.5 LTS
+- Ubuntu 14.04.5 LTS (64-bit)
 - [Caffe](http://caffe.berkeleyvision.org/) (Matcaffe)
 - MATLAB R2016a / R2017a
+- [OpenCV 2.4 / 3.0 / 3.2](http://opencv.org/)
 - [Joint WMF](http://www.cse.cuhk.edu.hk/leojia/projects/fastwmedian/)
 - [Rolling Guidance Filter](http://www.cse.cuhk.edu.hk/leojia/projects/rollguidance/)
 
 ### Usage
+1. Training
+    - Prepare training dataset. They should be placed individually under 'data/training/%04d'. For example, there are currently 3 images (from ImageNet[5]) are provided such as 'data/training/0001', 'data/training/0002', 'data/training/0003'.
+ 
+    - Run 'DHDE_feature_extraction.m' for feature extraction. (Please adjust parameters adequately.) It will generate {dbDCT, dbGRD, dbSVD, dbIMG, log.txt} in each folder. 'log.txt' contains number of extracted features and elapsed time.
+ 
+    - Run 'DHDE_db_generation.m' for train/validation db generation.
+ 
+    - Create 'logs' and 'models' directory.
+ 
+    - Run 'DHDE_train.sh' to start training. log files will be saved in 'logs' and snapshots will be saved in 'models'.
+    
+2. Defocus estimation
+    - Run 'DHDE_compile_jointWMF.m' in 'subfunctions/JointWMF'. (Please adjust library path adequately.) It will generate 'mexJointWMF.mexa64' in the same folder.
+    
+    - Run 'DHDE_defocus_estimation.m'. (Please adjust parameters adequately.)
+    
+    - Outputs can be found in 'data/defocus/%04d/multiscale'.
+
+### Notes
+- External dependencies (JointWMF [6] and Rolling Guidance Filter [7]) are included for your convenience. They can be downloaded from their websites.
+
+- Please carefully adjust library path for mex compilation of JointWMF.
 
 ### References
 
@@ -44,4 +67,8 @@ Our current implementation is tested on:
 
 [4] Zhuo, Shaojie, and Terence Sim. "Defocus map estimation from a single image." Pattern Recognition 44.9 (2011): 1852-1858.
 
+[5] Russakovsky, Olga, et al. "Imagenet large scale visual recognition challenge." International Journal of Computer Vision 115.3 (2015): 211-252.
 
+[6] Zhang, Qi, Li Xu, and Jiaya Jia. "100+ times faster weighted median filter (WMF)." Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2014.
+
+[7] Zhang, Qi, et al. "Rolling guidance filter." European Conference on Computer Vision. Springer International Publishing, 2014.
