@@ -57,6 +57,8 @@ Our current implementation is tested on:
 
 - Please carefully adjust library path for mex compilation of JointWMF.
 
+- Test images are from [Blur Detection Dataset](http://www.cse.cuhk.edu.hk/leojia/projects/dblurdetect/dataset.html) [2].
+
 ### References
 
 [1] Shi, Jianping, et al. "Break ames room illusion: depth from general single images." ACM Transactions on Graphics (TOG) 34.6 (2015): 225.
