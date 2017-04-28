@@ -43,7 +43,7 @@ Our current implementation is tested on:
  
     - Create 'logs' and 'models' directory.
  
-    - Run 'DHDE_train.sh' to start training. log files will be saved in 'logs' and snapshots will be saved in 'models'.
+    - Run 'DHDE_train.sh' to start training. (Change TOOLS to your caffe path.) log files will be saved in 'logs' and snapshots will be saved in 'models'.
     
 2. Defocus estimation
     - Run 'DHDE_compile_jointWMF.m' in 'subfunctions/JointWMF'. (Please adjust library path adequately.) It will generate 'mexJointWMF.mexa64' in the same folder.
