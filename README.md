@@ -29,6 +29,8 @@ Our current implementation is tested on:
 - Ubuntu 14.04.5 LTS
 - [Caffe](http://caffe.berkeleyvision.org/) (Matcaffe)
 - MATLAB R2016a / R2017a
+- [Joint WMF](http://www.cse.cuhk.edu.hk/leojia/projects/fastwmedian/)
+- [Rolling Guidance Filter](http://www.cse.cuhk.edu.hk/leojia/projects/rollguidance/)
 
 ### Usage
 
