@@ -1,0 +1,383 @@
+######################################################################
+# A Unified Approach of Multi-scale Deep and Hand-crafted Features
+# for Defocus Estimation
+#
+# Jinsun Park, Yu-Wing Tai, Donghyeon Cho and In So Kweon
+#
+# CVPR 2017
+#
+# Please feel free to contact if you have any problems.
+# 
+# E-mail : Jinsun Park (zzangjinsun@gmail.com)
+# Project Page : https://github.com/zzangjinsun/DHDE_CVPR17/
+######################################################################
+
+
+
+name: "DHDE"
+
+
+
+## Input Layers
+
+input: "dataDCT"
+input_dim: 128
+input_dim: 1
+input_dim: 40
+input_dim: 1
+
+input: "dataGRD"
+input_dim: 128
+input_dim: 1
+input_dim: 40
+input_dim: 1
+
+input: "dataSVD"
+input_dim: 128
+input_dim: 1
+input_dim: 40
+input_dim: 1
+
+input: "dataIMG"
+input_dim: 128
+input_dim: 3
+input_dim: 27
+input_dim: 27
+
+
+
+## Convolution Layers
+
+layer {
+  name: "conv1"
+  type: "Convolution"
+  bottom: "dataIMG"
+  top: "conv1"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  convolution_param {
+    num_output: 25
+    pad: 0
+    kernel_size: 3
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.1
+    }
+  }
+}
+layer {
+  name: "relu_conv1"
+  type: "ReLU"
+  bottom: "conv1"
+  top: "conv1"
+}
+layer {
+  name: "pool1"
+  type: "Pooling"
+  bottom: "conv1"
+  top: "pool1"
+  pooling_param {
+    pool: MAX
+    kernel_size: 3
+    stride: 3
+  }
+}
+
+layer {
+  name: "conv2"
+  type: "Convolution"
+  bottom: "pool1"
+  top: "conv2"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  convolution_param {
+    num_output: 50
+    pad: 0
+    kernel_size: 3
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.1
+    }
+  }
+}
+layer {
+  name: "relu_conv2"
+  type: "ReLU"
+  bottom: "conv2"
+  top: "conv2"
+}
+layer {
+  name: "pool2"
+  type: "Pooling"
+  bottom: "conv2"
+  top: "pool2"
+  pooling_param {
+    pool: MAX
+    kernel_size: 3
+    stride: 3
+  }
+}
+
+layer {
+  name: "conv3"
+  type: "Convolution"
+  bottom: "pool2"
+  top: "conv3"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  convolution_param {
+    num_output: 50
+    pad: 0
+    kernel_size: 3
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.1
+    }
+  }
+}
+layer {
+  name: "relu_conv3"
+  type: "ReLU"
+  bottom: "conv3"
+  top: "conv3"
+}
+
+layer {
+  name: "conv4"
+  type: "Convolution"
+  bottom: "conv3"
+  top: "conv4"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  convolution_param {
+    num_output: 25
+    pad: 0
+    kernel_size: 1
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.1
+    }
+  }
+}
+layer {
+  name: "relu_conv4"
+  type: "ReLU"
+  bottom: "conv4"
+  top: "conv4"
+}
+
+
+
+## Flattening Layers
+
+layer {
+  name: "flattenDCT"
+  type: "Flatten"
+  bottom: "dataDCT"
+  top: "flattenDCT"
+}
+
+layer {
+  name: "flattenGRD"
+  type: "Flatten"
+  bottom: "dataGRD"
+  top: "flattenGRD"
+}
+
+layer {
+  name: "flattenSVD"
+  type: "Flatten"
+  bottom: "dataSVD"
+  top: "flattenSVD"
+}
+
+layer {
+  name: "flattenIMG"
+  type: "Flatten"
+  bottom: "conv4"
+  top: "flattenIMG"
+}
+
+
+
+## Concatenation Layer
+
+layer {
+  name: "concat"
+  type: "Concat"
+  bottom: "flattenDCT"
+  bottom: "flattenGRD"
+  bottom: "flattenSVD"
+  bottom: "flattenIMG"
+  top: "data"
+  concat_param {
+    axis: 1
+  }
+}
+
+
+
+## Classification Layers
+
+layer {
+  name: "fc1"
+  type: "InnerProduct"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 0.0
+    decay_mult: 1.0
+  }
+  inner_product_param {
+    num_output: 300
+    weight_filler {
+      type: "gaussian"
+      std: 0.001
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.0
+    }
+  }   
+  bottom: "data"
+  top: "fc1"
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "fc1"
+  top: "fc1"
+}
+layer {
+  name: "drop1"
+  type: "Dropout"
+  bottom: "fc1"
+  top: "fc1"
+  dropout_param{
+    dropout_ratio: 0.5
+  }
+}
+layer {
+  name: "fc2"
+  type: "InnerProduct"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  inner_product_param {
+    num_output: 150
+    weight_filler {
+      type: "gaussian"
+      std: 0.001
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.1
+    }
+  }   
+  bottom: "fc1"
+  top: "fc2"
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "fc2"
+  top: "fc2"
+}
+layer {
+  name: "drop2"
+  type: "Dropout"
+  bottom: "fc2"
+  top: "fc2"
+  dropout_param{
+    dropout_ratio: 0.5
+  }
+}
+layer {
+  name: "fc3"
+  type: "InnerProduct"
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  param {
+    lr_mult: 1.0
+    decay_mult: 1.0
+  }
+  inner_product_param {
+    num_output: 11
+    weight_filler {
+      type: "gaussian"
+      std: 0.001
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.1
+    }
+  }   
+  bottom: "fc2"
+  top: "fc3"
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "fc3"
+  top: "fc3"
+}
+
+
+
+## Output Layer
+
+layer {
+  name: "prob"
+  type: "Softmax"
+  bottom: "fc3"
+  top: "prob"
+}

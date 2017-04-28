@@ -1,0 +1,50 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A Unified Approach of Multi-scale Deep and Hand-crafted Features
+% for Defocus Estimation
+%
+% Jinsun Park, Yu-Wing Tai, Donghyeon Cho and In So Kweon
+%
+% CVPR 2017
+%
+% Please feel free to contact if you have any problems.
+% 
+% E-mail : Jinsun Park (zzangjinsun@gmail.com)
+% Project Page : https://github.com/zzangjinsun/DHDE_CVPR17/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+1. Training
+ 1) Prepare training dataset. They should be placed individually under 'data/training/%04d'.
+
+    For example, there are currently 5 images (from ImageNet[1]) are provided such as
+    'data/training/0001', 'data/training/0002', ... , 'data/training/0005'.
+
+ 2) Run 'DHDE_feature_extraction.m' for feature extraction.
+    (Please adjust parameters adequately.)
+    It will generate {dbDCT, dbGRD, dbSVD, dbIMG, log.txt} in each folder.
+    'log.txt' contains number of extracted features and elapsed time.
+
+ 3) Run 'DHDE_db_generation.m' for train/validation db generation.
+
+ 4) Create 'logs' and 'models' directory.
+
+ 5) Run 'DHDE_train.sh' to start training. (Change TOOLS to your caffe path.)
+    log files will be saved in 'logs' and snapshots will be saved in 'models'.
+
+
+
+2. Defocus estimation
+ 1) Run 'DHDE_compile_jointWMF.m' in 'subfunctions/JointWMF'.
+    (Please adjust library path adequately.)
+    It will generate 'mexJointWMF.mexa64' in the same folder.
+
+ 2) Run 'DHDE_defocus_estimation.m'.
+    (Please adjust parameters adequately.)
+
+ 3) Outputs can be found in 'data/defocus/%04d/multiscale'.
+
+
+References
+
+[1] Russakovsky, Olga, et al.
+    "Imagenet large scale visual recognition challenge."
+    International Journal of Computer Vision 115.3 (2015): 211-252.

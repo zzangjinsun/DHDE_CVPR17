@@ -1,0 +1,32 @@
+######################################################################
+# A Unified Approach of Multi-scale Deep and Hand-crafted Features
+# for Defocus Estimation
+#
+# Jinsun Park, Yu-Wing Tai, Donghyeon Cho and In So Kweon
+#
+# CVPR 2017
+#
+# Please feel free to contact if you have any problems.
+# 
+# E-mail : Jinsun Park (zzangjinsun@gmail.com)
+# Project Page : https://github.com/zzangjinsun/DHDE_CVPR17/
+######################################################################
+
+
+
+net: "DHDE_train.prototxt"
+test_iter: 100
+test_interval: 1000
+
+lr_policy: "inv"
+base_lr: 0.0001
+gamma: 0.0001
+power: 2
+
+momentum: 0.9
+weight_decay: 0.01
+display: 1000
+max_iter: 800000
+snapshot: 100000
+snapshot_prefix: "models/DHDE_model"
+solver_mode: GPU
