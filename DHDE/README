@@ -17,8 +17,8 @@
 1. Training
  1) Prepare training dataset. They should be placed individually under 'data/training/%04d'.
 
-    For example, there are currently 5 images (from ImageNet[1]) are provided such as
-    'data/training/0001', 'data/training/0002', ... , 'data/training/0005'.
+    For example, there are currently 3 images (from ImageNet[1]) are provided such as
+    'data/training/0001', 'data/training/0002', 'data/training/0003'.
 
  2) Run 'DHDE_feature_extraction.m' for feature extraction.
     (Please adjust parameters adequately.)
