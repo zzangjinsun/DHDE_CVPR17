@@ -53,7 +53,7 @@ Our current implementation is tested on:
     - Outputs can be found in 'data/defocus/%04d/multiscale'.
 
 ### Notes
-- External dependencies (JointWMF [6] and Rolling Guidance Filter [7]) are included for your convenience. They can be downloaded from their websites.
+- External dependencies ([Joint WMF](http://www.cse.cuhk.edu.hk/leojia/projects/fastwmedian/) [6] and [Rolling Guidance Filter](http://www.cse.cuhk.edu.hk/leojia/projects/rollguidance/) [7]) are included for your convenience. They can be downloaded from their websites.
 
 - Please carefully adjust library path for mex compilation of JointWMF.
 
