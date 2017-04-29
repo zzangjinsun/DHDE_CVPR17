@@ -35,7 +35,7 @@ Our current implementation is tested on:
 
 ### Usage
 1. Training
-    - Prepare training dataset. They should be placed individually under 'data/training/%04d'. For example, there are currently 3 images (from ImageNet [5]) in 'data/training/0001', 'data/training/0002', 'data/training/0003'.
+    - Prepare training dataset. They should be placed individually under 'data/training/%04d'. For example, there are currently 3 images (from ImageNet [5]) in 'data/training/0001', 'data/training/0002', 'data/training/0003'.
  
     - Run 'DHDE_feature_extraction.m' for feature extraction. (Please adjust parameters adequately.) It will generate {dbDCT, dbGRD, dbSVD, dbIMG, log.txt} in each folder. 'log.txt' contains number of extracted features and elapsed time.
  
