@@ -17,7 +17,7 @@
 1. Training
  1) Prepare training dataset. They should be placed individually under 'data/training/%04d'.
 
-    For example, there are currently 3 images (from ImageNet[1]) in 
+    For example, there are currently 3 images (from ImageNet[5]) in 
     'data/training/0001', 'data/training/0002' and 'data/training/0003'.
 
  2) Run 'DHDE_feature_extraction.m' for feature extraction.
@@ -43,10 +43,38 @@
     (Please adjust parameters adequately.)
 
  3) Outputs can be found in 'data/defocus/%04d/multiscale'.
+ 
+ 
+ 
+Notes
+ - External dependencies (Joint WMF [6] and Rolling Guidance Filter [7]) are
+   included for your convenience. They can be downloaded from their websites.
+
+ - Please carefully adjust library path for mex compilation of JointWMF.
+ 
+ - Test images are from Blur Detection Dataset [2].
+
 
 
 References
 
-[1] Russakovsky, Olga, et al.
-    "Imagenet large scale visual recognition challenge."
+[1] Shi, Jianping, et al. "Break ames room illusion: depth from general single images."
+    ACM Transactions on Graphics (TOG) 34.6 (2015): 225.
+
+[2] Shi, Jianping, Li Xu, and Jiaya Jia. "Discriminative blur detection features."
+    Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2014.
+
+[3] Shi, Jianping, Li Xu, and Jiaya Jia. "Just noticeable defocus blur detection and estimation."
+    Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2015.
+
+[4] Zhuo, Shaojie, and Terence Sim. "Defocus map estimation from a single image."
+    Pattern Recognition 44.9 (2011): 1852-1858.
+
+[5] Russakovsky, Olga, et al. "Imagenet large scale visual recognition challenge."
     International Journal of Computer Vision 115.3 (2015): 211-252.
+
+[6] Zhang, Qi, Li Xu, and Jiaya Jia. "100+ times faster weighted median filter (WMF)."
+    Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2014.
+
+[7] Zhang, Qi, et al. "Rolling guidance filter." European Conference on Computer Vision.
+    Springer International Publishing, 2014.
