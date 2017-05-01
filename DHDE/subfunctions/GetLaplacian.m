@@ -1,4 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % A Unified Approach of Multi-scale Deep and Hand-crafted Features
 % for Defocus Estimation
 %
@@ -32,7 +31,6 @@
 % "Defocus map estimation from a single image."
 % Pattern Recognition 44.9 (2011): 1852-1858.
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function L = GetLaplacian(rgbImg, params)
     % Parsing Parameters
     propEps = params.propEps;
