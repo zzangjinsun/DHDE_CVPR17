@@ -20,7 +20,7 @@
 %          params - parameters
 % Output : L      - matting laplacian matrix
 %
-% This function is an modified version of the source codes from
+% This function is a modified version of the source codes from
 % the following papers:
 %
 % Levin, Anat, Dani Lischinski, and Yair Weiss.
