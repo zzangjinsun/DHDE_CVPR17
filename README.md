@@ -1,6 +1,6 @@
 A Unified Approach of Multi-scale Deep and Hand-crafted Features for Defocus Estimation
 ----------
-#### [Jinsun Park](https://sites.google.com/site/zzangjinsun/), Yu-Wing Tai, [Donghyeon Cho](https://sites.google.com/site/donghyeonchocvip/) and In So Kweon
+#### [Jinsun Park](https://sites.google.com/site/zzangjinsun/), Yu-Wing Tai, [Donghyeon Cho](https://cdh12242.wixsite.com/donghyeoncho) and In So Kweon
 #### _IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Jul 2017_
 
 ### Introduction
@@ -17,12 +17,12 @@ Defocus map estimation and binary blurry region segmentation results. (a) Input 
 
 ### Citation
 
-Preprint of our paper is available in arXiv. [[Abstract]](https://arxiv.org/abs/1704.08992) [[PDF]](https://arxiv.org/pdf/1704.08992.pdf)
+Our paper is available in arXiv [[Abstract]](https://arxiv.org/abs/1704.08992) [[PDF]](https://arxiv.org/pdf/1704.08992.pdf) or CVF Open Access [[PDF]](http://openaccess.thecvf.com/content_cvpr_2017/papers/Park_A_Unified_Approach_CVPR_2017_paper.pdf)
 
-    @article{park2017unified,
+    @inproceedings{park2017unified,
         title={A Unified Approach of Multi-scale Deep and Hand-crafted Features for Defocus Estimation},
         author={Park, Jinsun and Tai, Yu-Wing and Cho, Donghyeon and Kweon, In So},
-        journal={arXiv preprint arXiv:1704.08992},
+        booktitle={Proc. of Computer Vision and Pattern Recognition (CVPR)},
         year={2017}
     }
 
