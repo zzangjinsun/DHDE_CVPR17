@@ -1,6 +1,6 @@
 A Unified Approach of Multi-scale Deep and Hand-crafted Features for Defocus Estimation
 ----------
-#### [Jinsun Park](https://sites.google.com/site/zzangjinsun/), Yu-Wing Tai, [Donghyeon Cho](https://cdh12242.wixsite.com/donghyeoncho) and In So Kweon
+#### [Jinsun Park](https://zzangjinsun.github.io/), Yu-Wing Tai, [Donghyeon Cho](https://cdh12242.wixsite.com/donghyeoncho) and In So Kweon
 #### _IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Jul 2017_
 
 ### Introduction
